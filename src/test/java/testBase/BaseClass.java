@@ -28,6 +28,11 @@ import org.apache.logging.log4j.Logger; //Log4j
 
 public class BaseClass {
     public static WebDriver driver;
+    // 虽然 static 带来了便利，但它有一个致命的缺点：不支持真正的并行执行（Parallel Execution）。
+    //
+    //线程冲突：static 变量在 JVM 中只有一份。如果你配置 TestNG 同时运行 5 个测试用例，这 5 个线程会试图同时操控同一个 static driver。
+    //
+    //结果：浏览器会乱跳、报错，或者一个线程把另一个线程的浏览器关掉了。
     public Logger logger; //Log4j
     public Properties p;
 

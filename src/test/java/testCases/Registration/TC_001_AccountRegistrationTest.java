@@ -10,7 +10,7 @@ import testBase.BaseClass;
 
 public class TC_001_AccountRegistrationTest extends BaseClass {
 
-    @Test(groups = {"Regression","Master"})
+    @Test(groups = {"Regression","Master"},enabled = false)
     public void verify_account_registration(){
         logger.info("***** Starting TC001_AccountRegistrationTest *****");
 
@@ -66,7 +66,7 @@ public class TC_001_AccountRegistrationTest extends BaseClass {
         }
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void check_subscription_while_register(){
         HomePage hp = new HomePage(driver);
         hp.clickMyAccount();
